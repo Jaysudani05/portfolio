@@ -529,6 +529,7 @@ header>.container {
     font-weight: bold;
 }
 
+
 /* Responsive styles for education section */
 @media screen and (max-width: 992px) {
     .education-table {
@@ -622,7 +623,7 @@ header>.container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 20px;
-    align-items: stretch; /* Makes all boxes in a row the same height */
+    align-items: stretch; 
 }
 
 .project_box {
@@ -631,9 +632,9 @@ header>.container {
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s;
-    display: flex; /* Aligns content inside the box */
-    flex-direction: column; /* Stacks content vertically */
-}
+    display: flex; 
+    flex-direction: column; 
+}   
 
 .project_box:hover {
     transform: translateY(-5px);
@@ -689,7 +690,7 @@ header>.container {
 .project_box p {
     margin: 0 15px 15px;
     color: #666;
-    flex-grow: 1; /* Allows the description to expand */
+    flex-grow: 1; 
 }
 
 .project_box .btn {
@@ -697,20 +698,101 @@ header>.container {
     align-items: center;
     column-gap: 10px;
     margin: 15px;
-    margin-top: auto; /* This is the magic line that pushes the button to the bottom */
+    margin-top: auto;
     padding: 10px 15px;
-    width: 126px;
+    width: 167px;
     background-color: #4da6ff;
     color: #fff;
     border-radius: 10px;
     text-decoration: none;
     transition: background-color 0.3s;
-}
+} 
 
 .project_box .btn:hover {
     background-color: #fafbfc;
     color: #4da6ff;
     transform: scale(1.05);
+}
+
+/* Professional Journey additions - Final with Icons */
+#professional-journey .project_box {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: visible; 
+    padding: 40px 20px 20px 20px;
+    margin-top: 20px; 
+}
+ 
+#professional-journey .journey_icon {
+    position: absolute;
+    top: -20px; 
+    left: 20px;
+    width: 45px;
+    height: 45px;
+    background-color: #8338ec; 
+    color: white;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    box-shadow: 0 4px 10px rgba(131, 56, 236, 0.4);
+}
+
+#professional-journey .project_box h3 {
+    color: #222;
+}
+
+#professional-journey .project_box p {
+    color: #666;
+}
+
+#professional-journey .journey_company {
+    font-weight: 500;
+    color: #555;
+    margin-top: 0 !important;
+}
+
+#professional-journey .journey_header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+#professional-journey .journey_duration {
+    padding: 3px 12px;
+    border-radius: 15px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: var(--second-color);
+    color: var(--main-color);
+}
+
+#professional-journey .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px; 
+}
+
+#professional-journey .projects_container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+@media (max-width: 992px) {
+    #professional-journey .projects_container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    #professional-journey .projects_container {
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 768px) {
@@ -724,79 +806,6 @@ header>.container {
 
     .project_box p {
         font-size: 0.9em;
-    }
-}
-
-/* internship */
-
-.internship.section {
-    margin-top: 60px;
-}
-
-.internship {
-    padding: 50px 0;
-    background-color: #fff;
-}
-
-.internship_container {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-}
-
-.internship_content {
-    text-align: center;
-}
-
-.internship_content h3 {
-    font-size: 1.8em;
-    margin-bottom: 10px;
-}
-
-.internship_content p {
-    color: #666;
-    margin-bottom: 20px;
-}
-
-.internship_content .btn {
-    width: 220px;
-    margin-top: 20px;
-    display: inline-block;
-    align-items: center;
-    column-gap: 10px;
-    margin: 10px 15px 15px;
-    padding: 10px 15px;
-    background-color: #4da6ff;
-    color: #fff;
-    border-radius: 10px;
-    text-decoration: none;
-    transition: background-color 0.3s, transform 0.3s;
-}
-
-.internship_content .btn:hover {
-    background-color: #fafbfc;
-    color: #4da6ff;
-    transform: scale(1.05);
-}
-
-@media (max-width: 768px) {
-    .internship_container {
-        padding: 15px;
-    }
-
-    .internship_content h3 {
-        font-size: 1.5em;
-    }
-
-    .internship_content p {
-        font-size: 0.9em;
-    }
-
-    .internship_content .btn {
-        padding: 8px 15px;
     }
 }
 
