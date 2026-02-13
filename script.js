@@ -66,13 +66,68 @@ contactForm.addEventListener('submit', (e) => {
     sendMail();
 });
 
+// View All Projects Toggle
+const viewAllBtn = document.getElementById('view-all-projects');
+const projectsGrid = document.getElementById('projects-grid');
+
+if (viewAllBtn && projectsGrid) {
+    viewAllBtn.addEventListener('click', () => {
+        projectsGrid.classList.toggle('show-all');
+        if (projectsGrid.classList.contains('show-all')) {
+            viewAllBtn.textContent = 'See Less';
+        } else {
+            viewAllBtn.textContent = 'View All Projects';
+        }
+    });
+}
+
+/*=============== DARK LIGHT THEME ===============*/
+const themeButton = document.getElementById('theme-button')
+const darkTheme = 'dark-theme'
+const iconTheme = 'fa-sun'
+
+// Previously selected topic (if user selected)
+const selectedTheme = localStorage.getItem('selected-theme')
+const selectedIcon = localStorage.getItem('selected-icon')
+
+// We obtain the current theme that the interface has by validating the dark-theme class
+const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'fa-moon' : 'fa-sun'
+
+// We validate if the user previously chose a topic
+if (selectedTheme) {
+    // If the validation is fulfilled, we ask what the issue was to know if we activated or deactivated the dark
+    document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+    themeButton.classList[selectedIcon === 'fa-moon' ? 'add' : 'remove'](iconTheme)
+}
+
+// Activate / deactivate the theme manually with the button
+themeButton.addEventListener('click', () => {
+    // Add or remove the dark / icon theme
+    document.body.classList.toggle(darkTheme)
+    themeButton.classList.toggle(iconTheme)
+    // We save the theme and the current icon that the user chose
+    localStorage.setItem('selected-theme', getCurrentTheme())
+    localStorage.setItem('selected-icon', getCurrentIcon())
+})
+
 function sendMail() {
     // Get the form data
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const subject = document.getElementById("subject").value;
+    const message = document.getElementById("message").value;
+
+    if (!name || !email || !subject || !message) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
     let params = {
-        name: document.getElementById("name").value,
-        email: document.getElementById("email").value,
-        subject: document.getElementById("subject").value,
-        message: document.getElementById("message").value,
+        name: name,
+        email: email,
+        subject: subject,
+        message: message,
     };
 
     // Replace with your actual EmailJS Service ID and Template ID
@@ -88,6 +143,8 @@ function sendMail() {
             document.getElementById("message").value = "";
             window.location.href = "thank-you.html";
         })
-        .catch(err => console.log(err));
+        .catch(err => {
+            console.error("EmailJS Error:", err);
+            alert("Oops! Something went wrong while sending your message. Please check your EmailJS configuration.");
+        });
 }
-
