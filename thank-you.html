@@ -138,8 +138,7 @@
     <script>
         /*=============== DARK LIGHT THEME SYNC ===============*/
         const selectedTheme = localStorage.getItem('selected-theme')
-        // Default to dark if no theme is selected, or if dark is explicitly selected
-        if (!selectedTheme || selectedTheme === 'dark') {
+        if (selectedTheme === 'dark') {
             document.body.classList.add('dark-theme')
         }
     </script>
