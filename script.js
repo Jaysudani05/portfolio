@@ -94,13 +94,12 @@ const selectedIcon = localStorage.getItem('selected-icon')
 const getCurrentTheme = () => document.body.classList.contains(darkTheme) ? 'dark' : 'light'
 const getCurrentIcon = () => themeButton.classList.contains(iconTheme) ? 'fa-moon' : 'fa-sun'
 
-// Validate if the user previously chose a theme
+// Set dark theme by default if no preference is chosen
 if (selectedTheme) {
-    // If validation is fulfilled, we apply the saved theme and icon
     document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
-    themeButton.classList[selectedIcon === 'fa-sun' ? 'add' : 'remove'](iconTheme)
+    themeButton.classList[selectedIcon === 'fa-moon' ? 'add' : 'remove'](iconTheme)
 } else {
-    // Default to dark theme if no preference is stored
+    // Default to dark
     document.body.classList.add(darkTheme)
     themeButton.classList.add(iconTheme)
 }
