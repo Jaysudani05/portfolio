@@ -61,10 +61,12 @@ function scrollActive() {
 window.addEventListener('scroll', scrollActive);
 
 
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-    sendMail();
-});
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        sendMail();
+    });
+}
 
 // View All Projects Toggle
 const viewAllBtn = document.getElementById('view-all-projects');
