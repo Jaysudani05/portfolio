@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="icon" type="image/png" href="assets/images/logo.jpeg">
+    <title>My Tech Journey | Blog</title>
+    <style>
+        .blog-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .blog-meta {
+            font-size: 0.9rem;
+            color: var(--subtitle-color);
+            margin-bottom: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .blog-meta img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            font-size: 1.1rem;
+            line-height: 1.9;
+            color: var(--text-color);
+            padding: 40px;
+            background-color: var(--container-color);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            max-width: 900px;
+            margin: 0 auto;
+            border-top: 5px solid var(--main-color);
+        }
+
+        .blog-content p {
+            margin-bottom: 1.5rem;
+            text-align: justify;
+        }
+
+        .blog-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        .blog-content h3 {
+            color: var(--title-color);
+            margin-top: 35px;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .blog-content h3::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background-color: var(--main-color);
+            border-radius: 2px;
+        }
+
+        .highlight-box {
+            background-color: rgba(77, 166, 255, 0.1);
+            border-left: 4px solid var(--main-color);
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 0 10px 10px 0;
+            font-style: italic;
+            color: var(--title-color);
+        }
+
+        .drop-cap::first-letter {
+            font-size: 3.5rem;
+            float: left;
+            line-height: 1;
+            margin-right: 10px;
+            color: var(--main-color);
+            font-weight: bold;
+        }
+
+        /* Dark mode enhancements for blog */
+        body.dark-theme .blog-content {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            border-top: 5px solid var(--main-color);
+        }
+        
+        body.dark-theme .highlight-box {
+            background-color: rgba(77, 166, 255, 0.05);
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" style="color: var(--title-color);">
+                <h2 class="portfolio-title">Portfolio</h2>
+            </a>
+            <ul class="menu">
+                <li>
+                    <a href="index.html#hero" class="menu_link">Home</a>
+                </li>
+                <li>
+                    <a href="index.html#about" class="menu_link">About</a>
+                </li>
+                <li>
+                    <a href="index.html#skill" class="menu_link">Skill</a>
+                </li>
+                <li>
+                    <a href="index.html#education" class="menu_link">Education</a>
+                </li>
+                <li>
+                    <a href="index.html#projects" class="menu_link">Projects</a>
+                </li>
+                <li>
+                    <a href="blog.html" class="menu_link">Blog</a>
+                </li>
+                <li>
+                    <a href="index.html#contact" class="menu_link">Contact</a>
+                </li>
+                <li class="theme-toggle">
+                    <i class="fa-solid fa-moon" id="theme-button"></i>
+                </li>
+                <i class="fa-solid fa-xmark close_icon"></i>
+            </ul>
+            <i class="fa-solid fa-bars toggle_icon"></i>
+        </div>
+    </header>
+
+    <main>
+        <section class="blog section" style="padding-top: 120px;">
+            <div class="container">
+                <div class="blog-header">
+                    <h2 class="section_title" style="margin-bottom: 20px;">My Tech Journey</h2>
+                    <div class="blog-meta">
+                        <img src="assets/images/image_1.jpg" alt="Jay Sudani">
+                        <span>By <strong>Jay Sudani</strong> | May 2026</span>
+                    </div>
+                </div>
+
+                <div class="blog-content">
+                    <p class="drop-cap">Technology has always inspired me to understand how systems work beyond what we see on the screen. What started as curiosity about programming gradually became a passion for building real-world solutions through software and hardware integration. Over the years, this passion shaped my academic journey, project development experience, and career goals in the field of Embedded Systems and Design.</p>
+
+                    <p>I recently completed my Bachelor’s degree in Computer Engineering, and throughout this journey I continuously explored different technologies to strengthen both my technical knowledge and practical development skills. During the early stages of learning programming, I focused on understanding logic building, problem-solving, and application development. As I gained experience, I realized that I was more interested in systems that interact directly with hardware and solve practical real-world problems.</p>
+
+                    <p>This interest led me toward embedded systems, IoT development, and hardware-software integration.</p>
+
+                    <h3>Key Projects & Milestones</h3>
+                    <p>One of the projects that significantly contributed to my learning was the <strong>ESP32 Blynk Relay Control Project</strong>. This project was designed to control relay-based electrical devices remotely using the ESP32 microcontroller and the Blynk IoT platform. Working on this project gave me hands-on experience with IoT communication, cloud-based device control, relay interfacing, and real-time hardware interaction. It also helped me understand how embedded systems can be used to automate everyday devices efficiently.</p>
+
+                    <p>As I continued exploring embedded technologies, I worked on the <strong>Industrial Temperature Monitoring System</strong>, which focused on monitoring temperature conditions in industrial environments using sensors and embedded hardware. Through this project, I learned how sensor data is collected, processed, and monitored in real time for industrial applications. Developing this system improved my understanding of embedded programming, sensor integration, real-time monitoring, and system reliability — all of which are important aspects of industrial automation and embedded engineering.</p>
+
+                    <div class="highlight-box">
+                        Another important milestone in my journey was building the Smart Home Shield ESP32 Project. It introduced me to smart automation systems, wireless communication protocols, and intelligent device control. I became increasingly fascinated by how embedded systems are transforming modern homes, industries, and everyday life through automation and connectivity.
+                    </div>
+
+                    <p>These projects helped me move beyond traditional software development and introduced me to the deeper interaction between hardware and software. I realized that I enjoy not only writing code but also understanding how systems function internally, communicate with sensors, process real-time data, and control physical devices.</p>
+
+                    <h3>Choosing Embedded Engineering</h3>
+                    <p>This growing interest became the reason why I decided to pursue Embedded Systems and Design as my future career path.</p>
+
+                    <p>The embedded domain attracts me because it combines logical thinking, system optimization, hardware understanding, and software development into one field. Unlike regular application development, embedded systems require efficient memory usage, reliable performance, low-level programming knowledge, and real-time execution. These technical challenges motivate me to continuously improve my skills and deepen my understanding of system-level engineering.</p>
+
+                    <p>Because of this strong interest, I have now decided to prepare for the <strong>C-CAT examination</strong> to pursue higher studies in Embedded Systems and Design. I believe this step will help me strengthen my technical foundation and prepare me for opportunities in advanced product development and embedded technologies.</p>
+
+                    <h3>Current Focus & Future Goals</h3>
+                    <p>Currently, I am focused on improving my knowledge in:</p>
+                    <ul style="list-style-type: square; margin-left: 40px; margin-bottom: 20px;">
+                        <li>C Programming</li>
+                        <li>Embedded C</li>
+                        <li>Microcontrollers and ESP32 development</li>
+                        <li>IoT systems</li>
+                        <li>System design concepts</li>
+                        <li>Real-time embedded applications</li>
+                    </ul>
+
+                    <p>My long-term goal is to work in a product-based company where I can contribute to innovative technologies and intelligent embedded products. I want to be part of teams that build impactful systems used in industries such as consumer electronics, automation, IoT, and smart devices.</p>
+
+                    <h3>Final Thoughts</h3>
+                    <p>Throughout my journey, I have learned that growth comes from continuous learning and practical implementation. Every project taught me something valuable — whether it was solving hardware communication issues, debugging embedded code, or understanding how real-world systems are designed and optimized.</p>
+
+                    <p>Completing my Bachelor’s degree in Computer Engineering is an important milestone, but I believe it is only the beginning of a much larger journey. From learning programming fundamentals to developing embedded and IoT-based projects, every experience has helped shape my career direction and strengthen my passion for technology.</p>
+
+                    <p>Now, as I move toward the next phase through C-CAT and Embedded Systems specialization, I am excited to continue learning, building innovative systems, and growing into an engineer capable of creating meaningful technological solutions.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer_container container">
+            <div class="footer_social_icons">
+                <a href="https://www.linkedin.com/in/jaysudani05" target="_blank"><i
+                        class="fa-brands fa-linkedin-in"></i></a>
+                <a href="https://github.com/Jaysudani05" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.instagram.com/mr_sudani_05" target="_blank"><i
+                        class="fa-brands fa-instagram"></i></a>
+                <a href="https://x.com/JaySudani005" target="_blank"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+            <div class="footer_copyright">
+                <p>&copy; 2025 Jay Sudani. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
